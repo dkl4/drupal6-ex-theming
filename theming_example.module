@@ -28,6 +28,33 @@ function theming_example_menu() {
 }
 
 /**
+ * Implements hook_theme().
+ *
+ * Defines the theming capabilities provided as default representations by this module.
+ *
+ * A theme can override these default implementations.
+ *
+ * This hook_theme() is really an informational note to Drupal.  It tells Drupal :
+ *   Hey, this module wants to enable rendering beyond the return of a straight string.
+ *   This module wants to let themes override the way returned data can be portrayed.
+ *   The theme can either override via a theme function (first case below) or a
+ *   template file (second case below).
+ *   As part of this "theme info passing to Drupal", this hook tells Drupal the
+ *   name of the function that is overridable, and the name of the 'arguments' (variables)
+ *   which the module is passing off and are themable.
+ *
+ * @see http://api.drupal.org/api/drupal/developer--hooks--core.php/function/hook_theme/6
+ */
+function theming_example_theme() {
+  return array(
+    'theming_example_basic_content' => array(
+      // 'arguments' are a required ke for D6.
+      'arguments' => array('content' => NULL),
+    ),
+  );
+}
+
+/**
  * Initial landing page explaining use of the module.
  * This is the page callback for the simple implementation (no template).
  */
