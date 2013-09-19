@@ -60,7 +60,7 @@ function theming_example_theme() {
  */
 function theming_example_basic_content() {
   $content = t('Most simple example of returning content with page callback. No templates nor theme functions.');
-  //$content = theme('theming_example_basic_content', $content);
+  $content = theme('theming_example_basic_content', $content);
   return $content;
 }
 
