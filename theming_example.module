@@ -23,6 +23,12 @@ function theming_example_menu() {
     'access callback'  => TRUE,
     'access arguments' => array('access content'),
   );
+  $items['examples/theming_example/theming_example_with_template'] = array(
+    'title'            => 'Theming with a template and preprocess function',
+    'page callback'    => 'theming_example_with_template',
+    'access arguments' => array('access content'),
+    'weight'           => 1,
+  );
 
   return $items;
 }
