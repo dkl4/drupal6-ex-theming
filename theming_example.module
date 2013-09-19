@@ -58,6 +58,15 @@ function theming_example_theme() {
       // 'arguments' are a required key for D6.
       'arguments' => array('raw_content' => NULL),     // Set to NULL as kind of throw-away
     ),
+    // When declaring a template file, a corresponding preprocess function
+    // is also automatically assigned -- but not necessarily required to be there.
+    // More preprocess functions can be registered, by using the 'preprocess functions'
+    // array element, commented out in this example.
+    'theming_example_with_template' => array(
+      'arguments' => array('content' => NULL),
+      'template'  => 'theming_example_with_template',
+      // 'preprocess functions' => array('theming_example_with_template_extra'),
+    ),
   );
 }
 
