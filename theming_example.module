@@ -114,3 +114,21 @@ function theming_example_with_template() {
   return $content;
 }
 
+/**
+ * Preprocess function to modify variables before passing them to the template.
+ *
+ * Template preprocess functions are called automatically when a template
+ * file is in use.
+ *
+ * The function naming pattern is template_preprocess_HOOKNAME
+ * where HOOKNAME is the name of the 'theming item' identified in hook_theme().
+ *
+ * For core examples, see 'template_preprocess_page' and
+ * 'template_preprocess_node'.
+ */
+ function template_preprocess_theming_example_with_template(&$variables) {
+  $variables['content'] .= ' ' . t('This text was added in a preprocess function.');
+  $variables['aside'] = t('This separate content came completely from a preprocess function.');
+  // Note $variables is pass by ref, so we don't need to return anything
+}
+
