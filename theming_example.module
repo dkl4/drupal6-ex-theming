@@ -75,8 +75,10 @@ function theming_example_basic_content() {
  *   function mythemename_theming_example_basic_content($content = NULL)
  *
  * Note :
- *   mythemename_ is prepended to the default theme function name of theming_example_basic_content
- *   The argument (variable) of 'module_content' is an argument to the overriding function mythemename_theming_example_basic_content()
+ *   mythemename_ above is prepended to the default theme function name
+ *   of theming_example_basic_content.  The default implementation is
+ *   named theme_theming_example_basic_content, so the default prefix is 'theme_'.
+ *   The argument (variable) of 'raw_content' is an argument to the overriding function mythemename_theming_example_basic_content()
  *   $raw_content is the "raw" content we got out of the module page callback
  */
 function theme_theming_example_basic_content($raw_content = NULL) {
