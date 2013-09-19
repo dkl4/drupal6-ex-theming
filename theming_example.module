@@ -93,3 +93,15 @@ function theme_theming_example_basic_content($raw_content = NULL) {
   return $themed_content;
 }
 
+/**
+ * Page callback function for our page that uses a template and preprocess function.
+ * This callback function demonstrates using a template and preprocess function.
+ */
+function theming_example_with_template() {
+  $content = t('This is just our raw content.');
+  // We haven't setup template, nor put this in hook_theme, nor setup preprocess function
+  // $content = theme('theming_example_with_template', $content);
+  // This is what Drupal returns to the browser
+  return $content;
+}
+
