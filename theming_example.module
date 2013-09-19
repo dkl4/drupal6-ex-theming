@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Explains how a module declares theme functions, preprocess functions, and
+ * templates.
+ *
+ * The underlying approach is that a module should allow themes to do all
+ * rendering, but provide default implementations where appropriate.
+ *
+ * For a more descriptive introduction to creating a module that uses the
+ * theme layer, see http://drupal.org/node/165706.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function theming_example_menu() {
+  $items['examples/theming_example'] = array(
+    'title'            => 'Basic Theming Example',
+    'description'      => 'Some theming examples.',
+    'page callback'    => 'theming_example_basic_content',
+    'access callback'  => TRUE,
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+
