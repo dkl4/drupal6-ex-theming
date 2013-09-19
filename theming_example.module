@@ -108,8 +108,8 @@ function theme_theming_example_basic_content($raw_content = NULL) {
  */
 function theming_example_with_template() {
   $content = t('This is just our raw content.');
-  // We haven't setup template, nor put this in hook_theme, nor setup preprocess function
-  // $content = theme('theming_example_with_template', $content);
+  // We have a template, and setup hook_theme, but not yet a preprocess function
+  $content = theme('theming_example_with_template', $content);
   // This is what Drupal returns to the browser
   return $content;
 }
