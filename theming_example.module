@@ -65,3 +65,23 @@ function theming_example_basic_content() {
   return $content;
 }
 
+/**
+ * Basic theme function.
+ *
+ * This is the default function to handle
+ * `theme('theming_example_basic_content', $content)`.
+ *
+ * Other functions at the theme layer can override this, for example :
+ *   function mythemename_theming_example_basic_content($content = NULL)
+ *
+ * Note :
+ *   mythemename_ is prepended to the default theme function name of theming_example_basic_content
+ *   The argument (variable) of 'module_content' is an argument to the overriding function mythemename_theming_example_basic_content()
+ *   $module_content is the "raw" content we got out of the module page callback
+ */
+function theme_theming_example_basic_content($raw_content = NULL) {
+  // Here $themed_content is what the page will spit out
+  $themed_content = '<h3>' . t('The Content') . ':</h3>' . check_plain($raw_content);
+  return $themed_content;
+}
+
